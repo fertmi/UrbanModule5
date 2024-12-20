@@ -12,7 +12,7 @@ class House:
         self.name = name
         self.number_floor = number_floor
 
-    def go_to (self, new_floor): # Метод выводит каждый этаж до которого нужно приехать включительно, если этаж <1 или больше чем в доме выводит строку об отсутствии этажа
+    def go_to (self, new_floor): # Метод выводит каждый этаж до которого нужно приехать включительно, если этаж <1 или больше, чем в доме, выводит строку об отсутствии этажа
         if new_floor <= self.number_floor and new_floor > 0:
             for i in range(1, new_floor+1):
                 print (str(i)+' этаж')
