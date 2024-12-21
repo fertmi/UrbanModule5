@@ -7,15 +7,15 @@ def end_floor(number): # Функция для определения оконч
         return 'этаж'
 
 
-class House:
+class House: #Создание класса дом
     def __init__(self, name, number_floor):
         self.name = name
         self.number_floor = number_floor
 
-    def __len__(self):
+    def __len__(self): #Магический метод определения длины дома - это количество этажей
         return self.number_floor
 
-    def __str__(self):
+    def __str__(self): #Магический метод str - возвращает сведения о доме
         return f'Название: {self.name}, в здании: {self.number_floor} {end_floor(self.number_floor)}'
 
 
@@ -27,13 +27,7 @@ class House:
             print(f'{new_floor} - такого этажа не существует в "{self.name}", в нем {self.number_floor} {end_floor(self.number_floor)}')
 
 #Основная программа
-# h1 = House('ЖК Горский', 21)
-# h2 = House('Домик в деревне', 41)
-# h1.go_to(5)
-# h2.go_to(10)
-# h1.go_to(24)
-# h2.go_to(-1)
-h1 = House('ЖК Эльбрус', 13)
+h1 = House('ЖК Эльбрус', 11)
 h2 = House('ЖК Акация', 22)
 # __str__
 print(h1)
