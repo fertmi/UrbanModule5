@@ -1,5 +1,5 @@
 def end_floor(number): # Функция для определения окончания слова "этаж"
-    if number % 10 > 4:
+    if number % 10 > 4  or number in range(10, 21) or number % 10 == 0:
         return 'этажей'
     elif number % 10 in range(2, 5):
         return 'этажа'
@@ -21,7 +21,7 @@ class House:
 
 #Основная программа
 h1 = House('ЖК Горский', 21)
-h2 = House('Домик в деревне', 5)
+h2 = House('Домик в деревне', 41)
 h1.go_to(5)
 h2.go_to(10)
 h1.go_to(24)
