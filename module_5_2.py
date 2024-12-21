@@ -12,10 +12,10 @@ class House: #Создание класса дом
         self.name = name
         self.number_floor = number_floor
 
-    def __len__(self): #Магический метод определения длины дома - это количество этажей
+    def __len__(self): #Специальный метод определения длины дома - это количество этажей
         return self.number_floor
 
-    def __str__(self): #Магический метод str - возвращает сведения о доме
+    def __str__(self): #Специальный метод str - возвращает сведения о доме
         return f'Название: {self.name}, в здании: {self.number_floor} {end_floor(self.number_floor)}'
 
 
