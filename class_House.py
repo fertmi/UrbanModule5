@@ -39,7 +39,7 @@ class House: #Создание класса дом
             return self.number_floor != other.number_floor
 
     def __add__(self, value):
-        if isinstance(value, int):
+        if isinstance(value, int | float):
             self.number_floor += value
             return self
 
@@ -50,7 +50,7 @@ class House: #Создание класса дом
         return self.__add__(value)
 
     def __sub__(self, value):
-        if isinstance(value, int):
+        if isinstance(value, int | float):
             self.number_floor -= value
             return self
 
@@ -61,7 +61,7 @@ class House: #Создание класса дом
         return self.__sub__(value)
 
     def __mul__(self, value):
-        if isinstance(value, int):
+        if isinstance(value, int | float):
             self.number_floor *= value
             return self
 
@@ -72,9 +72,9 @@ class House: #Создание класса дом
         return self.__mul__(value)
 
     def __truediv__(self, value):
-        if isinstance(value, int):
-            float(self.number_floor)
-            float(value)
+        if isinstance(value, int | float):
+            # float(self.number_floor)
+            # float(value)
             self.number_floor /= value
             return self
 

@@ -20,3 +20,5 @@ print(h1 != h2) # __ne__
 h1 = h1 * 10
 h1 = h1 / 5
 print(h1)
+h1 = h1 - 30
+print(h1 == h2)
