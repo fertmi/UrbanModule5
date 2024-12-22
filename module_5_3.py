@@ -17,8 +17,8 @@ print(h1 >= h2) # __ge__
 print(h1 < h2) # __lt__
 print(h1 <= h2) # __le__
 print(h1 != h2) # __ne__
-h1 = h1 * 10
-h1 = h1 / 5
+h1 = h1 * 10 # __mul__
+h1 = h1 / 5 # __truediv__
 print(h1)
-h1 = h1 - 30
+h1 = h1 - 30 # __sub__
 print(h1 == h2)
