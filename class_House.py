@@ -49,6 +49,41 @@ class House: #Создание класса дом
     def __iadd__(self, value):
         return self.__add__(value)
 
+    def __sub__(self, value):
+        if isinstance(value, int):
+            self.number_floor -= value
+            return self
+
+    def __rsub__(self, value):
+        return self.__sub__(value)
+
+    def __isub__(self, value):
+        return self.__sub__(value)
+
+    def __mul__(self, value):
+        if isinstance(value, int):
+            self.number_floor *= value
+            return self
+
+    def __rmul__(self, value):
+        return self.__mul__(value)
+
+    def __imul__(self, value):
+        return self.__mul__(value)
+
+    def __truediv__(self, value):
+        if isinstance(value, int):
+            float(self.number_floor)
+            float(value)
+            self.number_floor /= value
+            return self
+
+    def __itruediv__(self, value):
+        return self.__truediv__(value)
+
+    def __rtruediv__(self, value):
+        return self.__truediv__(value)
+
     def __str__(self): #Специальный метод str - возвращает сведения о доме
         return f'Название: {self.name}, в здании: {self.number_floor} {self.end_floor(self.number_floor)}'
 
