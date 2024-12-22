@@ -73,8 +73,6 @@ class House: #Создание класса дом
 
     def __truediv__(self, value):
         if isinstance(value, int | float):
-            # float(self.number_floor)
-            # float(value)
             self.number_floor /= value
             return self
 
