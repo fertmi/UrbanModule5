@@ -17,26 +17,38 @@ class House: #Создание класса дом
     def __eq__(self, other):
         if isinstance(other, House):
             return self.number_floor == other.number_floor
+        elif isinstance(other, int):
+            return self.number_floor == other
 
     def __lt__(self, other):
         if isinstance(other, House):
             return self.number_floor < other.number_floor
+        elif isinstance(other, int):
+            return self.number_floor < other
 
     def __le__(self, other):
         if isinstance(other, House):
             return self.number_floor <= other.number_floor
+        elif isinstance(other, int):
+            return self.number_floor <= other
 
     def __gt__(self, other):
         if isinstance(other, House):
             return self.number_floor > other.number_floor
+        elif isinstance(other, int):
+            return self.number_floor > other
 
     def __ge__(self, other):
         if isinstance(other, House):
             return self.number_floor >= other.number_floor
+        elif isinstance(other, int):
+            return self.number_floor >= other
 
     def __ne__(self, other):
         if isinstance(other, House):
             return self.number_floor != other.number_floor
+        elif isinstance(other, int):
+            return self.number_floor != other
 
     def __add__(self, value):
         if isinstance(value, int):
@@ -55,7 +67,9 @@ class House: #Создание класса дом
             return self
 
     def __rsub__(self, value):
-        return self.__sub__(value)
+        if isinstance(value, int):
+            self.number_floor = value - self.number_floor
+            return self
 
     def __isub__(self, value):
         return self.__sub__(value)
@@ -81,7 +95,10 @@ class House: #Создание класса дом
         return self.__truediv__(value)
 
     def __rtruediv__(self, value):
-        return self.__truediv__(value)
+        if isinstance(value, int):
+            self.number_floor = value / self.number_floor
+            self.number_floor = int(self.number_floor)
+            return self
 
     def __str__(self): #Специальный метод str - возвращает сведения о доме
         return f'Название: {self.name}, в здании: {self.number_floor} {self.end_floor(self.number_floor)}'
