@@ -28,10 +28,16 @@ class House: #Создание класса дом
 
     def met_world_operations(self, other, operations): #Метод результата сравнения
         operations_dict = {'=':' равно ','!=':' не равно ', '<':' меньше ', '<=':' меньше или равно ', '>':' больше ', '>=':' больше или равно ',}
-        if isinstance(other, House):
-            return f'{self.number_floor} {self.end_floor_rp(self.number_floor)} {self.name}'+operations_dict[operations]+f'{other.number_floor}{self.end_floor_dp(other.number_floor)} {other.name}.'
-        elif isinstance(other, int):
-            return f'{self.number_floor} {self.end_floor_rp(self.number_floor)} {self.name}' + operations_dict[operations] + f'{other}{self.end_floor_dp(other)}.'
+        if operations_dict[operations][-2:-3:-1]=='е':
+            if isinstance(other, House):
+                return f'{self.number_floor} {self.end_floor_rp(self.number_floor)} {self.name}'+operations_dict[operations]+f'{other.number_floor} {self.end_floor_rp(other.number_floor)} {other.name}.'
+            elif isinstance(other, int):
+                return f'{self.number_floor} {self.end_floor_rp(self.number_floor)} {self.name}' + operations_dict[operations] + f'{other} {self.end_floor_rp(other)}.'
+        else:
+            if isinstance(other, House):
+                return f'{self.number_floor} {self.end_floor_rp(self.number_floor)} {self.name}'+operations_dict[operations]+f'{other.number_floor}{self.end_floor_dp(other.number_floor)} {other.name}.'
+            elif isinstance(other, int):
+                return f'{self.number_floor} {self.end_floor_rp(self.number_floor)} {self.name}' + operations_dict[operations] + f'{other}{self.end_floor_dp(other)}.'
 
     def __eq__(self, other):
         if isinstance(other, House):
