@@ -151,13 +151,13 @@ class House: #Создание класса дом
     def __str__(self): #Специальный метод str - возвращает сведения о доме
         return f'Название: {self.name}, в здании: {self.number_floor} {self.end_floor_rp(self.number_floor)}'
 
-    def __del__(self):
-
-        print(f'{self.name} снесён, но он останется в истории')
-
     def go_to (self, new_floor): # Метод выводит каждый этаж до которого нужно приехать включительно, если этаж <1 или больше, чем в доме, выводит строку об отсутствии этажа
+        print('Осмотр {}:'.format(self.name))
         if new_floor <= self.number_floor and new_floor > 0:
             for i in range(1, new_floor+1):
-                print (str(i)+' этаж')
+                print ('Осмотрен '+str(i)+' этаж')
         else:
             print(f'{new_floor} - такого этажа не существует в "{self.name}", в нем {self.number_floor} {self.end_floor_rp(self.number_floor)}')
+
+    def __del__(self):
+        print(f'{self.name} снесён, но он останется в истории')
