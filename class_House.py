@@ -18,13 +18,20 @@ class House: #Создание класса дом
             return 'этажа'
         else:
             return 'этаж'
+    def end_floor_dp(self, number):  # Метод для определения окончания слова "этаж" дательный падеж
+        if number % 10 > 4 or number in range(10, 21) or number % 10 == 0:
+            return '-ти этажам'
+        elif number % 10 in range(2, 5):
+            return '-м этажам'
+        else:
+            return '-му этажу'
 
     def met_world_operations(self, other, operations): #Метод результата сравнения
         operations_dict = {'=':' равно ','!=':' не равно ', '<':' меньше ', '<=':' меньше или равно ', '>':' больше ', '>=':' больше или равно ',}
         if isinstance(other, House):
-            return f'{self.number_floor} {self.end_floor_rp(self.number_floor)} {self.name}'+operations_dict[operations]+f'{other.number_floor} {self.end_floor_rp(other.number_floor)} {other.name}.'
+            return f'{self.number_floor} {self.end_floor_rp(self.number_floor)} {self.name}'+operations_dict[operations]+f'{other.number_floor}{self.end_floor_dp(other.number_floor)} {other.name}.'
         elif isinstance(other, int):
-            return f'{self.number_floor} {self.end_floor_rp(self.number_floor)} {self.name}' + operations_dict[operations] + f'{other} {self.end_floor_rp(other)}.'
+            return f'{self.number_floor} {self.end_floor_rp(self.number_floor)} {self.name}' + operations_dict[operations] + f'{other}{self.end_floor_dp(other)}.'
 
     def __eq__(self, other):
         if isinstance(other, House):
