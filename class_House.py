@@ -27,8 +27,8 @@ class House: #Создание класса дом
             return '-му этажу'
 
     def met_world_operations(self, other, operations): #Метод результата сравнения
-        operations_dict = {'=':' равно ','!=':' не равно ', '<':' меньше ', '<=':' меньше или равно ', '>':' больше ', '>=':' больше или равно ',}
-        if operations_dict[operations][-2:-3:-1]=='е':
+        operations_dict = {'=':' равно ','!=':' не равно ', '<':' меньше, чем ', '<=':' меньше или равно ', '>':' больше, чем ', '>=':' больше или равно ',}
+        if operations_dict[operations][-2:-3:-1]=='м':
             if isinstance(other, House):
                 return f'{self.number_floor} {self.end_floor_rp(self.number_floor)} {self.name}'+operations_dict[operations]+f'{other.number_floor} {self.end_floor_rp(other.number_floor)} {other.name}.'
             elif isinstance(other, int):
