@@ -19,14 +19,6 @@ class House: #Создание класса дом
         else:
             return 'этаж'
 
-    def end_floor_rp(self, number):  # Метод для определения окончания слова "этаж" 
-        if number % 10 > 4 or number in range(10, 21) or number % 10 == 0:
-            return 'этажей'
-        elif number % 10 in range(2, 5):
-            return 'этажа'
-        else:
-            return 'этаж'
-
     def met_world_operations(self, other, operations): #Метод результата сравнения
         operations_dict = {'=':' равно ','!=':' не равно ', '<':' меньше ', '<=':' меньше или равно ', '>':' больше ', '>=':' больше или равно ',}
         if isinstance(other, House):
