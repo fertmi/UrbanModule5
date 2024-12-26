@@ -11,6 +11,7 @@ print(s2==s3)
 print(s1<s2)
 House.go_to(s1,3)
 print(s1==s3)
+print(s3>s1)
 print_history()
 
 # Удаление объектов
