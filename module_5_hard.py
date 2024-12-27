@@ -8,10 +8,6 @@ class UrTube:
         self.videos = []
         self.current_user = ''
         self.current_age = ''
-        pass
-
-    def __str__(self):
-        pass
 
     def log_in(self, nickname, password):
         if len(self.users) > 0:
@@ -41,7 +37,6 @@ class UrTube:
     def log_out(self):
         print(f'Пользователь {self.current_user} вышел из UrTube')
         self.current_user = ''
-        pass
 
     def add(self, *args):
         for x in range(0,len(args)):
